@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- Facebook and Twitter integration -->
+        <meta property="og:title" content=""/>
+        <meta property="og:image" content=""/>
+        <meta property="og:url" content=""/>
+        <meta property="og:site_name" content=""/>
+        <meta property="og:description" content=""/>
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:url" content="" />
+        <meta name="twitter:card" content="" />
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet"/>
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css"/>
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="css/icomoon.css"/>
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="css/magnific-popup.css"/>
+
+        <!-- Owl Carousel  -->
+        <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="css/owl.theme.default.min.css"/>
+
+        <!-- Theme style  -->
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <!-- Modernizr JS -->
+        <script src="js/modernizr-2.6.2.min.js"></script>
+        <!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            table,tr,th,td{
+                font-size: 11pt;
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                color: black;
+            }
+            th{
+                width: 300px;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="background-color: #31b0d5">
+                    <span style="text-align: center"><h1>View Fee Details</h1></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h:form>
+                        <table>
+                            <tr>
+                                <h:outputLabel style="color: #3333ff" value="Registration Fee Status"></h:outputLabel>
+                                <h:outputLabel value=":"></h:outputLabel>                                                             
+                                <h:outputLabel style="color: #ff33cc" value="2500"></h:outputLabel>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                        
+                                <h:commandButton style="background-color: #33cc00" value="Refresh" action="ViewFeeDetails.xhtml" actionListener="#{feeDetails.see()}"></h:commandButton>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <th>Id</th>
+                                <th>Duration(in month)</th>                                    
+                                <th>Amount</th>                          
+                            </tr>
+
+                            <c:forEach var="n" items="#{feeDetails.fee}"> 
+
+                                <tr>
+                                    <td>#{n.id}</td>
+                                    <td>#{n.duration}</td>
+                                    <td>#{n.amount}</td>
+                                </tr>                
+                            </c:forEach>
+                        </table>
+                    </h:form>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </h:body>
+</html>
+

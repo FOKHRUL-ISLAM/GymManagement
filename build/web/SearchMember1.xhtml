@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet"/>
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css"/>
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="css/icomoon.css"/>
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="css/magnific-popup.css"/>
+
+        <!-- Owl Carousel  -->
+        <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="css/owl.theme.default.min.css"/>
+
+        <!-- Theme style  -->
+        <link rel="stylesheet" href="css/style.css"/>
+
+        <!-- Modernizr JS -->
+        <script src="js/modernizr-2.6.2.min.js"></script>
+        <!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            table,tr,th,td{
+                font-size: 11pt;
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                color: #a94442;
+            }
+            tr,th,td{
+                height: 50px;
+                width: 100px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12" style="background-color: #ac2925;color: green">
+                    <span style="text-align: center"><h1>Search Member</h1></span>
+                </div>
+                <div class="col-md-12">
+                    <h:form>
+                        <table>
+                            <tr>
+                                <th>Contact No</th>
+                                <th>:</th>
+                                <td><h:inputText value="#{fileUpload.con_no}"></h:inputText></td>
+                                <td><h:commandButton style="height: 40px; width: 120px; border-radius: 40px;font-size: 16pt;" value="Search" action="SearchMember1.xhtml" actionListener="#{fileUpload.search()}">
+                                    
+                                    </h:commandButton></td>
+                                                                 
+                                
+                            </tr>
+                        </table>
+                    </h:form>
+                </div>
+                <div class="col-md-12">
+                    <table>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Contact_Number</th>
+                            <th>Email</th>
+                            <th>Date Of Birth</th>
+                            <th>Sex</th>
+                            <th>Occupation</th>
+                            <th>Address</th>
+                            <th>Emergency Contact</th>
+                            <th>Weight</th>
+                            <th>Duration</th>
+                            <th>Start_Date</th>
+                            <th>End_date</th>
+
+                        </tr>
+                        <c:forEach var="m" items="#{fileUpload.proload}">
+                            <tr>
+                                <td>#{m.name}</td>
+                                <td>#{m.con_no}</td>
+                                <td>#{m.email}</td>
+                                <td>#{m.dob}</td>
+                                <td>#{m.sex}</td>
+                                <td>#{m.occu}</td>
+                                <td>#{m.address}</td>
+                                <td>#{m.emergency_c}</td>
+                                <td>#{m.weight}</td>
+                                <td>#{m.duration}</td>
+                                <td>#{m.start_d}</td>
+                                <td>#{m.end_d}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Add New Member</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Adding New Member</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <link href="fontawesome/css/all.css" rel="stylesheet" type="text/css"/>
+        <style>
+            select{
+                width: 100%;
+                height: 25px;
+            }
+
+            table{
+                background: #a6e1ec;
+                margin: 10px;
+            }
+            tr,td{
+                padding: 5px;
+            }
+            input[type="date"]{
+                width:  100%;
+            }
+            input[type="radio"]{
+                margin-left:20px;
+
+            }
+
+            button{
+                width: 100px;
+                border-radius: 10px;
+                background-color: #5bc0de;
+                margin-top: 10px;
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12" style="background-color: #269abc">
+                    <span style="text-align: center"><h1>Update Member</h1></span>
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-12">
+                        <img src="photo/raju.jpg"/>
+                    </div>
+                    <button type="submit" value="Upload"><i class="fas fa-upload" style="font-size: 30px; color:green"></i>Upload</button><br/>
+                    <button type="submit" value="Delete"><i class="far fa-trash-alt" style="font-size: 30px; color:red"></i>Delete</button><br/>
+                </div>
+                <div class="col-md-9">
+                    <h:form>
+                        <h:panelGrid columns="3" style="float: left">
+
+                            <h:outputLabel value="Contact No"></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:selectOneMenu value="#{fileUpload.selectedcon_no}">
+                                <f:selectItems value="#{fileUpload.doLoad}"></f:selectItems>
+                                <f:ajax render="d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11" event="change" listener="#{fileUpload.ajaxList()}"></f:ajax>
+                            </h:selectOneMenu>
+                            
+                            <h:outputLabel value="Name" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.name}" id="d1"></h:inputText>
+                            
+                            <h:outputLabel value="Email" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.email}" id="d2"></h:inputText>
+                            
+                            <h:outputLabel value="Date Of Birth" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.dob}" id="d3"></h:inputText>
+                            
+                            <h:outputLabel value="Sex" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.sex}" id="d4"></h:inputText>
+                            
+                            <h:outputLabel value="Occupation" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.occu}" id="d5"></h:inputText>
+                            
+                            <h:outputLabel value="Address" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.address}" id="d6"></h:inputText>
+                            
+                            <h:outputLabel value="Emergency Contact_No" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.emergency_c}" id="d7"></h:inputText>
+                            
+                            <h:outputLabel value="Weight" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.weight}" id="d8"></h:inputText>
+                            
+                            <h:outputLabel value="Duration" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.duration}" id="d9"></h:inputText>
+                            
+                            <h:outputLabel value="Start Date" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.start_d}" id="d10"></h:inputText>
+                            
+                            <h:outputLabel value="End Date" ></h:outputLabel>
+                            <h:outputLabel value=":"></h:outputLabel>
+                            <h:inputText value="#{fileUpload.end_d}" id="d11"></h:inputText>
+                            
+                            <h:commandButton value="Update" class="far fa-trash-alt" style="font-size: 30px; color: #31b0d5" action="MainPage.xhtml" actionListener="#{fileUpload.update()}"></h:commandButton>            
+                        </h:panelGrid>
+                    </h:form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </h:body>
+</html>
+
