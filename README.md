@@ -1,3 +1,3 @@
 # GymManagement
 
-https://fokhrul-islam.github.io/GymManagement/
+live : https://fokhrul-islam.github.io/GymManagement/
